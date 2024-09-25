@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./theme-config.css";
 import "@radix-ui/themes/styles.css";
-import { Theme } from "@radix-ui/themes";
+import { Theme, ThemePanel } from "@radix-ui/themes";
 import localFont from "next/font/local";
 import "./globals.css";
 import NavBar from "./NavBar";
@@ -12,7 +14,7 @@ import NavBar from "./NavBar";
 // });
 const inter = localFont({
   src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
+  variable: "--font-inter",
   weight: "100 900",
 });
 
@@ -28,8 +30,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Theme>
+      <body className={inter.variable}>
+        <Theme accentColor="teal" radius="full">
           <NavBar />
           <main className="p-5">{children}</main>
         </Theme>
