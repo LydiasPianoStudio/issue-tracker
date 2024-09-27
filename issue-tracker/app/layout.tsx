@@ -1,21 +1,27 @@
+import "@radix-ui/themes/styles.css";
+import "./theme-config.css";
+import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./theme-config.css";
-import "@radix-ui/themes/styles.css";
-import { Theme, ThemePanel } from "@radix-ui/themes";
-import localFont from "next/font/local";
-import "./globals.css";
+import { Container, Theme, ThemePanel } from "@radix-ui/themes";
 import NavBar from "./NavBar";
+import AuthProvider from "./auth/Provider";
+import QueryClientProvider from "./QueryClientProvider";
 
 // //const geistSans = localFont({
 //   src: "./fonts/GeistVF.woff",
 //   variable: "--font-geist-sans",
 //   weight: "100 900",
 // });
-const inter = localFont({
-  src: "./fonts/GeistMonoVF.woff",
+// const inter = localFont({
+//   src: "./fonts/GeistMonoVF.woff",
+//   variable: "--font-inter",
+//   weight: "100 900",
+// });
+
+const inter = Inter({
+  subsets: ["latin"],
   variable: "--font-inter",
-  weight: "100 900",
 });
 
 // export const metadata: Metadata = {
